@@ -5,30 +5,63 @@
 
 complexSymbols:
 # identifier	regexp
-# Sentence endings.
-. sentence ending	(?<=[^\s.])\.(?=[\"'”’)\s]|$)
-! sentence ending	(?<=[^\s!])\!(?=[\"'”’)\s]|$)
-? sentence ending	(?<=[^\s?])\?(?=[\"'”’)\s]|$)
-# Phrase endings.
-; phrase ending	(?<=[^\s;]);(?=\s|$)
-: phrase ending	(?<=[^\s:]):(?=\s|$)
-# Others
-decimal point	(?<![^\d -])\.(?=\d)
-in-word '	(?<=[^\W_])['’]
-negative number	(?<!\w)[-−]{1}(?=[$£€¥.]?\d)
 
 symbols:
 # identifier	replacement[[	level][	preserve]][	# display name]
 
-# Complex symbols
-. sentence ending	dot	all	always
-! sentence ending	bang	all	always
-? sentence ending	question	all	always
-; phrase ending	semi	most	always
-: phrase ending	colon	most	always
-decimal point		none	always
-in-word '	tick	all	norep
-negative number	minus	none	norep
+
+# Php Mappings
+
+# Php Arithmetic Operators
++	plus	all
+-	minus	all
+*	multiplied by	all
+/	divided by	all
+%	modulus of	all
+**	to the exponent of	all
+
+# Php Assignment Operators
+=	set to 	all
++=	set to self plus	all	
+-=	set to self minus	all	
+*=	set to self times	all	
+/=	set to self divided by	all	
+%=	set to self modulus by	all
+
+# Php Comparison operators
+==	equals	all
+!=	not equals	all
+!==	is not identical to	all
+<>	not equals	all
+<	less than	all
+>	greater than	all
+<=	less than or equal to	all
+>=	greater than or equal to	all
+!	not	all
+<=>	spaceship	all
+
+# Php Increment/Decrement Operators
+++	incremented by	all
+--	decremented by	all
+
+#Php logic operators
+&&	and	all
+||	or	all
+
+
+# Php various
+(	begin arguments	all
+)	end arguments	all
+{	begin object	all
+}	end object	all
+[	begin list	all
+]	end list	all
+
+# Php String Operators
+.	concatenation	all
+
+
+
 
 # Whitespace
 \0	blank	char	# null
